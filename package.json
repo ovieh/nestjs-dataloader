@@ -11,19 +11,19 @@
     "prepare": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@nestjs/common": "^6.11.0",
-    "@nestjs/core": "^6.11.0",
-    "@nestjs/graphql": "6.5.3",
+    "@nestjs/common": "^7.0.2",
+    "@nestjs/core": "^7.0.2",
+    "@nestjs/graphql": "7.0.1",
     "dataloader": "^2.0.0",
     "rxjs": "^6.5.4"
   },
   "peerDependencies": {
-    "graphql": "^14.1.1",
-    "reflect-metadata": "^0.1.12"
+    "graphql": "^14.6.0",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "apollo-server-express": "^2.9.16",
-    "typescript": "^3.7.4"
+    "apollo-server-express": "^2.11.0",
+    "typescript": "^3.8.3"
   },
   "types": "index.d.ts",
   "main": "dist/index.js",
