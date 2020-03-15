@@ -65,12 +65,13 @@ export class DataLoaderInterceptor implements NestInterceptor {
 /**
  * The decorator to be used within your graphql method.
  */
-export const Loader = createParamDecorator(async (data: string, [_, __, ctx]) => {
-  if (ctx[NEST_LOADER_CONTEXT_KEY] === undefined) {
+export const Loader = createParamDecorator(async (data: string, ctx: ExecutionContext) => {
+  const context = GqlExecutionContext.create(ctx).getContext()
+  if (context[NEST_LOADER_CONTEXT_KEY] === undefined) {
     throw new InternalServerErrorException(`
             You should provide interceptor ${DataLoaderInterceptor.name} globally with ${APP_INTERCEPTOR}
           `);
   }
 
-  return await ctx[NEST_LOADER_CONTEXT_KEY](data);
+  return await context[NEST_LOADER_CONTEXT_KEY](data);
 });
